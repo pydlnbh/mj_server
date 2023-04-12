@@ -1,13 +1,9 @@
-# 威海麻将后端
+# 麻将后端
 
 ----
 
 ## 有言在先
-该项目只是一个**教学研究项目，不具备某些特殊功能！**
-
-客户端地址请访问：https://github.com/hjj2017/whmj.cocos2d_client
-
-威海地方玩法麻将，Java 服务端代码，JDK 语言版本 OpenJDK 13+33。
+Java 服务端代码，JDK 语言版本 OpenJDK 13+33。
 想要在 IntelliJ IDEA 中成功运行代码，只需要依次启动两个服务器：
 
 - proxyserver
@@ -64,7 +60,7 @@ python3 etc/tool/gen_club_id.py
 ```
 
 ## 启动 proxyserver
-启动 proxyserver 时，需要在 IDEA 中添加以下参数：
+启动 proxyserver 时，需要在 IDEA 中 [Program arguments] 添加以下参数：
 
 ```
 --server_id=1001
@@ -77,7 +73,7 @@ python3 etc/tool/gen_club_id.py
 **注意：还需要修改工作目录为 whmj.java_server\proxyserver**
 
 ## 启动 bizserver
-启动 proxyserver 时，需要在 IDEA 中添加以下参数：
+启动 proxyserver 时，需要在 IDEA 中 [Program arguments] 添加以下参数：
 
 ```
 --server_id=2001
@@ -88,20 +84,21 @@ python3 etc/tool/gen_club_id.py
 -c ../etc/bizserver_all.conf.json
 ```
 
-**注意：还需要修改工作目录为 whmj.java_server\bizserver**
+**注意：还需要修改工作目录 [Working directory] 为 whmj.java_server\bizserver**
 
-如果希望 bizserver 工作在测试模式中，那么需要增加环境变量：
-MJ_WORK_MODE=DEV，重启服务器就可以使用测试用户登录游戏。
+如果希望 bizserver 工作在测试模式中，那么需要增加环境变量 [Environment variables]: MJ_WORK_MODE=DEV，重启服务器就可以使用测试用户登录游戏。
 
 ## 怎样测试服务器
 可以打开本机浏览器，然后输入以下地址：
 
-http://cdn0001.afrxvk.cn/whmj/go.html?serverAddr=127.0.0.1:20480
+[前端地址]?serverAddr=127.0.0.1:20480
 
 这样，麻将客户端就会尝试连接本地服务器。
 
 如果是工作在测试模式中，可以使用下面这个地址：
 
-http://cdn0001.afrxvk.cn/whmj/go.html?serverAddr=127.0.0.1:20480&DEV=1&testerName=测试用户名称
+[前端地址]?serverAddr=127.0.0.1:20480&DEV=1&testerName=测试用户名称
 
-祝你好运！
+前端地址:
+本地地址: Cocos本地启动的地址, http://localhost:7456/
+远程地址: http://cdn0001.afrxvk.cn/whmj/go.html
